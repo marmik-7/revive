@@ -1,5 +1,5 @@
 {
-  "name": "freedom-journey-backend",
+  "name": "revive-backend",
   "version": "1.0.0",
   "description": "Motivational addiction recovery backend API",
   "main": "src/server.js",

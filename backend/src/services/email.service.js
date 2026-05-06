@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 
 const EMAIL_PROVIDER = process.env.EMAIL_PROVIDER || 'gmail';
-const EMAIL_FROM = process.env.EMAIL_FROM || 'Freedom Journey <no-reply@freedomjourney.app>';
+const EMAIL_FROM = process.env.EMAIL_FROM || 'Revive <no-reply@revive.app>';
 
 function getTransporter() {
   if (EMAIL_PROVIDER === 'gmail') {
@@ -156,7 +156,7 @@ function baseTemplate(content) {
     <div class="logo">Freedom<span>Journey</span></div>
     ${content}
     <div class="footer">
-      <p>Freedom Journey &nbsp;·&nbsp; <a href="${process.env.FRONTEND_URL}/settings">Manage preferences</a> &nbsp;·&nbsp; <a href="${process.env.FRONTEND_URL}/unsubscribe">Unsubscribe</a></p>
+      <p>Revive &nbsp;·&nbsp; <a href="${process.env.FRONTEND_URL}/settings">Manage preferences</a> &nbsp;·&nbsp; <a href="${process.env.FRONTEND_URL}/unsubscribe">Unsubscribe</a></p>
     </div>
   </div>
 </body>
@@ -166,7 +166,7 @@ function baseTemplate(content) {
 async function sendWelcomeEmail({ to, name }) {
   const html = baseTemplate(`
     <h1>Welcome, ${name} 👋</h1>
-    <p>You just took a huge step. Signing up for Freedom Journey takes real courage — and that courage is proof you have what it takes to change.</p>
+    <p>You just took a huge step. Signing up for Revive takes real courage — and that courage is proof you have what it takes to change.</p>
     <p>Here's what's waiting for you:</p>
     <div class="info-box">
       <p>📋 &nbsp;<strong>Personalized 21-Day Plan</strong> — AI-crafted daily tasks for your recovery</p>
@@ -188,7 +188,7 @@ async function sendWelcomeEmail({ to, name }) {
 
   return sendEmail({
     to,
-    subject: `Welcome to Freedom Journey, ${name} 🌱`,
+    subject: `Welcome to Revive, ${name} 🌱`,
     html,
     text: `Welcome ${name}! Your recovery journey starts now. Visit ${process.env.FRONTEND_URL}/dashboard to begin.`,
   });
@@ -197,7 +197,7 @@ async function sendWelcomeEmail({ to, name }) {
 async function sendVerificationEmail({ to, name, verificationUrl }) {
   const html = baseTemplate(`
     <h1>Verify your email</h1>
-    <p>Hi ${name}, please verify your email address to activate your Freedom Journey account.</p>
+    <p>Hi ${name}, please verify your email address to activate your Revive account.</p>
     <p>This link expires in <strong>24 hours</strong>.</p>
     <a href="${verificationUrl}" class="btn">Verify Email</a>
     <hr class="divider">
@@ -208,7 +208,7 @@ async function sendVerificationEmail({ to, name, verificationUrl }) {
 
   return sendEmail({
     to,
-    subject: `Verify your Freedom Journey email`,
+    subject: `Verify your Revive email`,
     html,
     text: `Hi ${name}, verify your email here: ${verificationUrl}`,
   });
@@ -217,7 +217,7 @@ async function sendVerificationEmail({ to, name, verificationUrl }) {
 async function sendLoginNotificationEmail({ to, name, loginTime, ipAddress }) {
   const html = baseTemplate(`
     <h1>New login detected</h1>
-    <p>Hi ${name}, we noticed a new sign-in to your Freedom Journey account.</p>
+    <p>Hi ${name}, we noticed a new sign-in to your Revive account.</p>
     <div class="info-box">
       <p>🕐 &nbsp;<strong>Time:</strong> ${loginTime || 'Just now'}</p>
       <p style="margin-top:8px;">📍 &nbsp;<strong>IP Address:</strong> ${ipAddress || 'Unknown'}</p>
@@ -230,7 +230,7 @@ async function sendLoginNotificationEmail({ to, name, loginTime, ipAddress }) {
 
   return sendEmail({
     to,
-    subject: `New login to your Freedom Journey account`,
+    subject: `New login to your Revive account`,
     html,
     text: `Hi ${name}, new login detected at ${loginTime} from ${ipAddress}. If this wasn't you, reset your password.`,
   });
@@ -239,7 +239,7 @@ async function sendLoginNotificationEmail({ to, name, loginTime, ipAddress }) {
 async function sendPasswordResetEmail({ to, name, resetUrl }) {
   const html = baseTemplate(`
     <h1>Reset your password</h1>
-    <p>Hi ${name}, we received a request to reset your Freedom Journey password.</p>
+    <p>Hi ${name}, we received a request to reset your Revive password.</p>
     <p>Click below to create a new password. This link expires in <strong>1 hour</strong>.</p>
     <a href="${resetUrl}" class="btn">Reset Password</a>
     <hr class="divider">
@@ -250,7 +250,7 @@ async function sendPasswordResetEmail({ to, name, resetUrl }) {
 
   return sendEmail({
     to,
-    subject: `Reset your Freedom Journey password`,
+    subject: `Reset your Revive password`,
     html,
     text: `Hi ${name}, reset your password here: ${resetUrl} — link expires in 1 hour.`,
   });
@@ -362,7 +362,7 @@ async function sendMilestoneEmail({ to, name, streakDays, addictionType }) {
 
   return sendEmail({
     to,
-    subject: `${m.emoji} ${streakDays} day milestone — Freedom Journey`,
+    subject: `${m.emoji} ${streakDays} day milestone — Revive`,
     html,
     text: `${m.title} — ${m.msg} Keep going, ${name}!`,
   });

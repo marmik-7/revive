@@ -43,7 +43,7 @@ app.get("/health", (req, res) => {
   res.json({
     status: "ok",
     timestamp: new Date().toISOString(),
-    app: "Freedom Journey",
+    app: "Revive",
   });
 });
 

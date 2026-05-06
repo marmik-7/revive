@@ -1,5 +1,5 @@
 -- ============================================================
--- Freedom Journey — Supabase PostgreSQL Schema (SAFE VERSION)
+-- Revive — Supabase PostgreSQL Schema (SAFE VERSION)
 -- ============================================================
 
 -- Enable UUID extension

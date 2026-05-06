@@ -1,6 +1,19 @@
-# 🌱 Freedom Journey — Backend API
+# 🌱 Revive — Backend API
 
 A production-ready Node.js + Express backend for a motivational addiction recovery web application. Built with Supabase (PostgreSQL + Auth + Realtime), Google Gemini/Groq AI, and email services.
+
+Quick Start
+-----------
+
+```bash
+cd backend
+npm install
+# create .env.local from .env.example and set required vars
+cp .env.example .env.local || copy .env.example .env.local
+npm run dev
+```
+
+See the sections below for detailed environment variables, database setup, and deployment.
 
 ---
 
@@ -22,7 +35,7 @@ A production-ready Node.js + Express backend for a motivational addiction recove
 
 ## Overview
 
-Freedom Journey is a comprehensive backend API designed to support addiction recovery users by providing:
+Revive is a comprehensive backend API designed to support addiction recovery users by providing:
 
 - **User Management**: Authentication, profiles, and account management
 - **Addiction Tracking**: Track multiple addictions with streaks and insights
@@ -503,7 +516,7 @@ Please include:
 
 ## License
 
-This project is part of the Freedom Journey initiative for addiction recovery support.
+This project is part of the Revive initiative for addiction recovery support.
 
 ---
 

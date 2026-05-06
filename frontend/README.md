@@ -1,6 +1,19 @@
-# 🎨 Freedom Journey — Frontend
+# 🎨 Revive — Frontend
 
 A modern, responsive React web application for supporting addiction recovery. Built with Vite, React Router, Tailwind CSS, and Supabase.
+
+Quick Start
+-----------
+
+```bash
+cd frontend
+npm install
+# create .env.local from .env.example and set VITE_* vars
+cp .env.example .env.local || copy .env.example .env.local
+npm run dev
+```
+
+This doc also includes detailed setup, environment variables, and deployment instructions below.
 
 ---
 
@@ -21,7 +34,7 @@ A modern, responsive React web application for supporting addiction recovery. Bu
 
 ## Overview
 
-Freedom Journey Frontend is a modern web application designed to provide:
+Revive Frontend is a modern web application designed to provide:
 
 - **User Authentication**: Secure signup, login, and OAuth integration
 - **Onboarding Flow**: Guided setup for new users
@@ -559,7 +572,7 @@ Monitor with:
 
 ## License
 
-This project is part of the Freedom Journey initiative for addiction recovery support.
+This project is part of the Revive initiative for addiction recovery support.
 
 ---
 
